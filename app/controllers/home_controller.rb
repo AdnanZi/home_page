@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 	def index
+		@posts = Post.all
 	end
 
 	def about
@@ -14,7 +15,7 @@ class HomeController < ApplicationController
 		if saveInfo?
 			redirect_to home_about_path
 		else
-			render 'editAbout'
+			render :editAbout
 		end
 	end
 
@@ -30,7 +31,7 @@ class HomeController < ApplicationController
 		if saveInfo?
 			redirect_to home_contact_path
 		else
-			render 'editContact'
+			render :editContact
 		end
 	end
 
