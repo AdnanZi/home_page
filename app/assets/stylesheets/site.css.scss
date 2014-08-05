@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 $error-color: #a94442;
 
 body {
@@ -34,7 +31,7 @@ body {
     width: 15%
   }
 
-  .footer {
+  .page-footer {
     padding-top:20px;
 
     form {
@@ -52,9 +49,5 @@ body {
     input, textarea {
       border-color: $error-color
     }
-  }
-
-  .post {
-    padding-bottom:20px;
   }
 }

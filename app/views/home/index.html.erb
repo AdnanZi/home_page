@@ -1,16 +1,24 @@
-<% @posts.each do |post|  %>
-	
-<div class="post">
-	<div class="page-header">
-		<h1><%= post.title %></h1>
-	</div>
-
-	<div><%= post.body.html_safe %></div>
-
-	<div class="footer">
-		<%= button_to "Edit", edit_post_path(post), method: :get, class: "btn btn-large btn-primary" %>
-		<%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
-	</div>
+<div class="blog-header">
+	<h1 class="blog-title">Welcome to my blog!</h1>
+    <p class="lead blog-description">This is my developer's home page and blog.</p>
 </div>
 
-<% end %>
+<div class="blog-main">
+	<% @posts.each do |post|  %>
+	<!-- /.blog-post -->	
+	<div class="blog-post">
+
+		<h2 class="blog-post-title"><%= post.title %></h2>
+
+		<p class="blog-post-meta"><%= post.updated_at %></p>
+
+		<%= simple_format(post.body).html_safe %>
+
+		<div class="page-footer">
+			<%= button_to "Edit", edit_post_path(post), method: :get, class: "btn btn-large btn-primary" %>
+			<%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
+		</div>
+	</div>
+
+	<% end %>
+</div>
