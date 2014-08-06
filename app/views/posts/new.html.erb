@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>Create post</h1>
+	<h1><%= Constants::CREATE_POST_TITLE %></h1>
 </div>
 
 <%= render partial: 'partials/postForm', locals: { path: posts_path, method: "post" } %>

@@ -1,9 +1,9 @@
 <div class="page-header">
-	<h1>About</h1>
+	<h1><%= Constants::ABOUT_TITLE %></h1>
 </div>
 
 <div><%= @myInfo.content %></div>
 
 <div class="page-footer">
-	<button class="btn btn-large btn-primary" onclick="window.location = '<%= home_about_edit_path %>'">Edit</button>
+	<button class="btn btn-large btn-primary" onclick="window.location = '<%= home_about_edit_path %>'"><%= Constants::EDIT_ABOUT_BUTTON %></button>
 </div>

@@ -1,6 +1,6 @@
 <div class="blog-header">
-	<h1 class="blog-title">Welcome to my blog!</h1>
-    <p class="lead blog-description">This is my developer's home page and blog.</p>
+	<h1 class="blog-title"><%= Constants::BLOG_TITLE %></h1>
+    <p class="lead blog-description"><%= Constants::BLOG_DESCRIPTION %></p>
 </div>
 
 <div class="blog-main">
@@ -15,8 +15,8 @@
 		<%= simple_format(post.body).html_safe %>
 
 		<div class="page-footer">
-			<%= button_to "Edit", edit_post_path(post), method: :get, class: "btn btn-large btn-primary" %>
-			<%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
+			<%= button_to Constants::EDIT_BLOG_BUTTON, edit_post_path(post), method: :get, class: "btn btn-large btn-primary" %>
+			<%= button_to Constants::DELETE_BLOG_BUTTON, post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
 		</div>
 	</div>
 

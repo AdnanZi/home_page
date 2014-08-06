@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>HomePage</title>
+  <title><%= Constants::PAGE_TITLE %></title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -28,13 +28,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<%= root_path %>">Adnan Zildzic Blog</a>
+          <a class="navbar-brand" href="<%= root_path %>"><%= Constants::PAGE_TITLE %></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right nav-pills">
-            <li class="active"><button class="btn btn-primary navbar-btn" onclick="window.location='/posts/new'">New post</button></li>
-            <li><button class="btn btn-primary navbar-btn" onclick="window.location = '/home/about'">About</button></li>
-            <li><button class="btn btn-primary navbar-btn" onclick="window.location = '/home/contact'">Contact</button></li>
+            <li class="active"><button class="btn btn-primary navbar-btn" onclick="window.location='/posts/new'"><%= Constants::NEW_POST_BUTTON %></button></li>
+            <li><button class="btn btn-primary navbar-btn" onclick="window.location = '/home/about'"><%= Constants::ABOUT_BUTTON %></button></li>
+            <li><button class="btn btn-primary navbar-btn" onclick="window.location = '/home/contact'"><%= Constants::CONTACT_BUTTON %></button></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -47,9 +47,9 @@
   </div><!-- /.container -->
 
   <div class="footer">
-    <p>Page built by its author, using Ruby on Rails and Bootstrap</a>.</p>
+    <p><%= Constants::FOOTER_DESCRIPTION %></a>.</p>
     <p>
-      <a href="#">Back to top</a>
+      <a href="#"><%= Constants::FOOTER_TO_TOP %></a>
     </p>
   </div>
 
