@@ -14,10 +14,14 @@
 
 		<%= simple_format(post.body).html_safe %>
 
-		<div class="page-footer">
-			<%= button_to Constants::EDIT_BLOG_BUTTON, edit_post_path(post), method: :get, class: "btn btn-large btn-primary" %>
-			<%= button_to Constants::DELETE_BLOG_BUTTON, post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
-		</div>
+		<% if (loggedIn?) %>
+			<div class="page-footer">
+				<%= button_to Constants::EDIT_BLOG_BUTTON, edit_post_path(post), method: :get, 
+					class: "btn btn-large btn-primary" %>
+				<%= button_to Constants::DELETE_BLOG_BUTTON, post_path(post), method: :delete, 
+				   data: { confirm: "Are you sure?" }, class: "btn btn-large btn-danger" %>
+			</div>
+		<% end %>
 	</div>
 
 	<% end %>

@@ -19,4 +19,5 @@ module Constants
 	NEW_POST_BUTTON = 'New post'
 	FOOTER_DESCRIPTION = 'Page built by its author, using Ruby on Rails and Bootstrap.'
 	FOOTER_TO_TOP = 'Back to top'
+	ADMIN_BUTTON = :Admin
 end

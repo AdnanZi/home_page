@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   put 'home/contact/save' => 'home#saveContact'
 
+  get 'home/login' => 'home#logIn'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

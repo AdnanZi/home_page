@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+	before_action :authenticate, only: [:editAbout, :saveAbout, :editContact, :saveContact]
+
 	def index
 		@posts = Post.all
 	end
@@ -32,6 +34,14 @@ class HomeController < ApplicationController
 			redirect_to home_contact_path
 		else
 			render :editContact
+		end
+	end
+
+	def logIn
+		if (session[:authenticated] != true)
+				redirect_to :root if authenticate === true
+		else
+			redirect_to :root
 		end
 	end
 

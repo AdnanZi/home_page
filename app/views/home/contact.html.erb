@@ -4,6 +4,8 @@
 
 <div><%= @myInfo.content %></div>
 
-<div class="page-footer">
-	<button class="btn btn-large btn-primary" onclick="window.location = '<%= home_contact_edit_path %>'"><%= Constants::EDIT_CONTACT_BUTTON %></button>
-</div>
+<% if (loggedIn?) %>
+	<div class="page-footer">
+		<button class="btn btn-large btn-primary" onclick="window.location = '<%= home_contact_edit_path %>'"><%= Constants::EDIT_CONTACT_BUTTON %></button>
+	</div>
+<% end %>
