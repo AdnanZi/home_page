@@ -1,15 +1,6 @@
 <div class="row">
 
-	<% if @myInfo.errors.any? %>
-	<div class="error">
-		<ul>
-		<% @myInfo.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
-	</div>
-
-	<% end %>
+	<%= render partial: 'partials/errors', locals: { model: @myInfo } %>
 	
 	<%= form_for @myInfo, url: path, method: :put do |f| %>
 
