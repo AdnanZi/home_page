@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
   protected
   	def authenticate
   		auth = authenticate_or_request_with_http_basic do |username, password|
-  			username == USERNAME && password == PASSWORD	
+        # Fix for deployed version 
+        # to use Heroku ENV variables
+        userName = defined?(USERNAME) != nil ? USERNAME : ENV['USERNAME']
+        pass = defined?(PASSWORD) != nil ? PASSWORD : ENV['PASSWORD']
+
+  			username == userName && password == pass	
   		end
 
   		session[:authenticated] = auth if auth === true
