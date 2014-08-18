@@ -2,7 +2,7 @@
 	<h1><%= Constants::ABOUT_TITLE %></h1>
 </div>
 
-<div><%= @myInfo.content %></div>
+<div><%= @myInfo && @myInfo.content %></div>
 
 <% if (loggedIn?) %>
 	<div class="page-footer">
