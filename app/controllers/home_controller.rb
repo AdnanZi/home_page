@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	before_action :authenticate, only: [:editAbout, :saveAbout, :editContact, :saveContact]
 
 	def index
-		@posts = Post.all
+		@posts = Post.order(created_at: :desc)
 	end
 
 	def about
